@@ -2,8 +2,15 @@ image:
   - Visual Studio 2015
   - Visual Studio 2017
 
-platform: x64
-configuration: Release
+platform:
+  - x64
+  - Win32
+
+configuration:
+  - Release
+  - Debug
+  - Release (static runtime)
+  - Debug (static runtime)
 
 version: ci.{build}
 
