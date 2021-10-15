@@ -2,7 +2,10 @@ image:
   - Visual Studio 2015
   - Visual Studio 2017
 
-platform: x64
+platform:
+  - x64
+  - Win32
+
 configuration: Release
 
 version: ci.{build}
@@ -19,9 +22,11 @@ for:
       - image: Visual Studio 2015
   before_build:
     - COPY .ci\VS2015.props .\Build.props
+    - COPY .ci\userconfig2015.alt.hpp .\ql\userconfig.hpp
 -
   matrix:
     only:
       - image: Visual Studio 2017
   before_build:
     - COPY .ci\VS2017.props .\Build.props
+    - COPY .ci\userconfig2017.alt.hpp .\ql\userconfig.hpp
